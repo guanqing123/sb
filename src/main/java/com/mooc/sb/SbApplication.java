@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.mooc.sb.mapper")
 public class SbApplication {
     public static void main(String[] args) {
-//        SpringApplication.run(SbApplication.class, args);
-        SpringApplication springApplication = new SpringApplication(SbApplication.class);
+        SpringApplication.run(SbApplication.class, args);
+/*        SpringApplication springApplication = new SpringApplication(SbApplication.class);
         springApplication.addInitializers(new SecondInitializer());
-        springApplication.run(args);
+        springApplication.run(args);*/
     }
 }

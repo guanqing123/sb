@@ -3,6 +3,8 @@ package com.mooc.sb.event.boardcast;
 import com.mooc.sb.event.boardcast.EventMulticaster;
 import com.mooc.sb.event.event.WeatherEvent;
 import com.mooc.sb.event.listener.WeatherListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +14,11 @@ import java.util.List;
  * @Author guanqing
  * @Date 2021/5/4 14:40
  **/
+@Component
 public abstract class AbstractEventMulticaster implements EventMulticaster {
 
-    private List<WeatherListener> listenerList = new ArrayList<>();
+    @Autowired
+    private List<WeatherListener> listenerList;
 
     @Override
     public void multicastEvent(WeatherEvent event) {
