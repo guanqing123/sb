@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    无参构造-->
+    <bean id="student" class="com.mooc.sb.ioc.xml.Student">
+        <property name="name" value="zhangsan"/>
+        <property name="age" value="13"/>
+        <property name="classList">
+            <list>
+                <value>math</value>
+                <value>english</value>
+            </list>
+        </property>
+    </bean>
+
+<!--    有参构成-->
+    <bean id="stu2" class="com.mooc.sb.ioc.xml.Stu2">
+        <constructor-arg index="0" value="lisi"/>
+        <constructor-arg index="1" value="14"/>
+        <property name="classList">
+            <list>
+                <value>chinese</value>
+                <value>history</value>
+            </list>
+        </property>
+    </bean>
+
+<!--    静态工厂方法-->
+    <bean id="dog" class="com.mooc.sb.ioc.xml.AnimalFactory" factory-method="getAnimal">
+        <constructor-arg value="dog"/>
+    </bean>
+
+    <bean id="cat" class="com.mooc.sb.ioc.xml.AnimalFactory" factory-method="getAnimal">
+        <constructor-arg value="cat"/>
+    </bean>
+
+<!--    实例工厂方法-->
+    <bean name="instanceFactory" class="com.mooc.sb.ioc.xml.InstanceFactory"/>
+
+    <bean id="dog2" factory-bean="instanceFactory" factory-method="getAnimal">
+        <constructor-arg value="dog"/>
+    </bean>
+    <bean id="cat2" factory-bean="instanceFactory" factory-method="getAnimal">
+        <constructor-arg value="cat"/>
+    </bean>
+
+<!--    测试工具-->
+    <bean id="helloService" class="com.mooc.sb.ioc.xml.HelloService">
+        <property name="student" ref="student"/>
+        <property name="stu2" ref="stu2"/>
+        <property name="animal" ref="cat"/>
+        <property name="instance" ref="cat2"/>
+    </bean>
+</beans>

@@ -24,4 +24,8 @@ public class WeatherRunListener {
     public void rain(){
         eventMulticaster.multicastEvent(new RainEvent());
     }
+
+    public void t(){
+        System.out.println("weather broadcast...");
+    }
 }
