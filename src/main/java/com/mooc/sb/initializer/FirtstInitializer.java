@@ -14,10 +14,11 @@ public class FirtstInitializer implements ApplicationContextInitializer<Configur
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
-        Map<String, Object> map = new HashMap<>();
+/*        Map<String, Object> map = new HashMap<>();
         map.put("key1", "value1");
         MapPropertySource mapPropertySource = new MapPropertySource("firtstInitializer", map);
         environment.getPropertySources().addLast(mapPropertySource);
-        System.out.println("run firtstInitializer");
+        System.out.println("run firtstInitializer");*/
+        environment.setRequiredProperties("mooc");
     }
 }

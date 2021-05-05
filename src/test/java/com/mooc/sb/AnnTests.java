@@ -2,6 +2,7 @@ package com.mooc.sb;
 
 import com.mooc.sb.ioc.ann.AnnService;
 import com.mooc.sb.ioc.ann.MyBeanImport;
+import com.mooc.sb.ioc.ann.Teacher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +28,11 @@ public class AnnTests {
         System.out.println(annService.ani());
     }
 
+    @Autowired
+    private Teacher teacher;
+
+    @Test
+    public void testTeacher(){
+        System.out.printf(teacher.getName());
+    }
 }
