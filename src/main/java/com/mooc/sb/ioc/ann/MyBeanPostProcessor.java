@@ -31,13 +31,13 @@ public class MyBeanPostProcessor implements InstantiationAwareBeanPostProcessor 
         return null;
     }
 
-    //
-    @Override
+    // Caused by: java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+/*    @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (beanName.equals("worker")){
             Worker worker = (Worker) bean;
             worker.setName("动态添加名字");
         }
         return false;
-    }
+    }*/
 }
