@@ -1,0 +1,28 @@
+context:
+    initializer:
+        classes: com.mooc.sb.initializer.ThirdInitializer
+    listener:
+        classes: com.mooc.sb.listener.ThirdListener,com.mooc.sb.listener.FourthListener
+logging:
+    pattern:
+        console: '[%thread] %-5level %logger{50} -%msg%n'
+mooc: test
+mybatis:
+    configuration:
+        map-underscore-to-camel-case: true
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.mooc.sb.bean
+server:
+    port: 8080
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: bP1AuCf9P9-i
+        url: jdbc:mysql://mysql.rds.sge.cn:3306/demo
+        username: root
+    banner:
+        location: favorite.txt
+        image:
+            location: favorite.jpg
+    main:
+        banner-mode: "off"
