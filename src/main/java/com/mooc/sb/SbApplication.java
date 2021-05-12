@@ -9,12 +9,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.StopWatch;
 
 @SpringBootApplication
 @MapperScan("com.mooc.sb.mapper")
 @Import(MyBeanImport.class) //运行需要打开（和 test里面的 import冲突,所以才注释掉）
 public class SbApplication {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(SbApplication.class, args);
 /*        SpringApplication springApplication = new SpringApplication(SbApplication.class);
         springApplication.addInitializers(new SecondInitializer());
@@ -26,5 +27,17 @@ public class SbApplication {
         springApplication.run(args);*/
 
 //        System.out.println("\u001B[32m :: Spring Boot :: ");
+
+/*        StopWatch myWatch = new StopWatch("myWatch");
+        myWatch.start("task1");
+        Thread.sleep(2000l);
+        myWatch.stop();
+        myWatch.start("task2");
+        Thread.sleep(3000l);
+        myWatch.stop();
+        myWatch.start("task3");
+        Thread.sleep(1000l);
+        myWatch.stop();
+        System.out.println(myWatch.prettyPrint());*/
     }
 }
