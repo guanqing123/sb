@@ -8,15 +8,20 @@ import org.springframework.boot.ResourceBanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.StopWatch;
+
+import java.util.Properties;
 
 @SpringBootApplication
 @MapperScan("com.mooc.sb.mapper")
 @Import(MyBeanImport.class) //运行需要打开（和 test里面的 import冲突,所以才注释掉）
+@PropertySource({"demo.properties"})
 public class SbApplication {
     public static void main(String[] args) throws InterruptedException {
-        SpringApplication.run(SbApplication.class, args);
+//        SpringApplication.run(SbApplication.class, args);
+
 /*        SpringApplication springApplication = new SpringApplication(SbApplication.class);
         springApplication.addInitializers(new SecondInitializer());
         springApplication.addListeners(new SecondListener());
@@ -39,5 +44,11 @@ public class SbApplication {
         Thread.sleep(1000l);
         myWatch.stop();
         System.out.println(myWatch.prettyPrint());*/
+
+        SpringApplication springApplication = new SpringApplication(SbApplication.class);
+        Properties properties = new Properties();
+        properties.setProperty("mooc.website.url", "mooc_url_1");
+        springApplication.setDefaultProperties(properties);
+        springApplication.run(args);
     }
 }

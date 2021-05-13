@@ -6,7 +6,9 @@ context:
 logging:
     pattern:
         console: '[%thread] %-5level %logger{50} -%msg%n'
-mooc: test
+mooc:
+    website:
+        url: mooc_url_3
 mybatis:
     configuration:
         map-underscore-to-camel-case: true
@@ -25,4 +27,4 @@ spring:
         image:
             location: favorite.jpg
     main:
-        banner-mode: "off"
+        banner-mode: console
