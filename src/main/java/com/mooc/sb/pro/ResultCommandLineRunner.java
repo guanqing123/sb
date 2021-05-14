@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @Date 2021/5/13 20:05
  **/
 @Component
-public class ResultCommandLineRunner implements CommandLineRunner, EnvironmentAware {
+public class ResultCommandLineRunner implements CommandLineRunner, EnvironmentAware, MyAware {
 
     private Environment env;
 
@@ -21,10 +21,18 @@ public class ResultCommandLineRunner implements CommandLineRunner, EnvironmentAw
         System.out.println(env.getProperty("mooc.avg.age"));
         System.out.println(env.getProperty("mooc.website.path"));
         System.out.println(env.getProperty("mooc.vm.name"));
+        System.out.println(flag.isCanOperate());
     }
 
     @Override
     public void setEnvironment(Environment environment) {
         env = environment;
+    }
+
+    private Flag flag;
+
+    @Override
+    public void setFlag(Flag fla) {
+        flag = fla;
     }
 }
