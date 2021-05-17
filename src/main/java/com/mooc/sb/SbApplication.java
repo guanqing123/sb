@@ -1,9 +1,14 @@
 package com.mooc.sb;
 
+import com.mooc.sb.execpt.AException;
+import com.mooc.sb.execpt.BException;
+import com.mooc.sb.execpt.CException;
+import com.mooc.sb.execpt.Solid;
 import com.mooc.sb.initializer.SecondInitializer;
 import com.mooc.sb.ioc.ann.MyBeanImport;
 import com.mooc.sb.listener.SecondListener;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ResourceBanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +24,10 @@ import java.util.Properties;
 @Import(MyBeanImport.class) //运行需要打开（和 test里面的 import冲突,所以才注释掉）
 @PropertySource({"demo.properties"})
 public class SbApplication {
+
+/*    @Autowired
+    private Solid solid;*/
+
     public static void main(String[] args) throws InterruptedException {
 //        SpringApplication.run(SbApplication.class, args);
 
@@ -44,6 +53,21 @@ public class SbApplication {
         Thread.sleep(1000l);
         myWatch.stop();
         System.out.println(myWatch.prettyPrint());*/
+
+/*        try {
+            throw new CException(new BException(new AException(new Exception("test"))));
+        } catch (Throwable t) {
+            while (t != null){
+                System.out.println(t.getClass());
+                t = t.getCause();
+            }
+        }*/
+
+/*        System.out.println("hello");
+        Thread close_jvm = new Thread(() -> System.out.println("close jvm"));
+        Runtime.getRuntime().addShutdownHook(close_jvm);
+        System.out.println("world");
+        Runtime.getRuntime().removeShutdownHook(close_jvm);*/
 
         SpringApplication springApplication = new SpringApplication(SbApplication.class);
         Properties properties = new Properties();
