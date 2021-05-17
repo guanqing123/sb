@@ -22,6 +22,8 @@ public class ResultCommandLineRunner implements CommandLineRunner, EnvironmentAw
         System.out.println(env.getProperty("mooc.website.path"));
         System.out.println(env.getProperty("mooc.vm.name"));
         System.out.println(flag.isCanOperate());
+        System.out.println(env.getProperty("mooc.default.name"));
+        System.out.println(env.getProperty("mooc.active.name") +"\t"+ env.getProperty("mooc.active2.name"));
     }
 
     @Override
