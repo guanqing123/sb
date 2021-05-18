@@ -28,3 +28,5 @@ spring:
             location: favorite.jpg
     main:
         banner-mode: console
+#    boot:
+#        enableautoconfiguration: false

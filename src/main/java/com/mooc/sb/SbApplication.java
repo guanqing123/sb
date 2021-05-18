@@ -26,14 +26,14 @@ import java.util.Properties;
 @MapperScan("com.mooc.sb.mapper")
 @Import({MyBeanImport.class, MyImportSelector.class, MyDeferredImportSelector.class}) //运行需要打开（和 test里面的 import冲突,所以才注释掉）
 @PropertySource({"demo.properties"})
-@ImportResource("ioc/demo.xml")
+//@ImportResource("ioc/demo.xml")
 public class SbApplication {
 
 /*    @Autowired
     private Solid solid;*/
 
     public static void main(String[] args) throws InterruptedException {
-//        SpringApplication.run(SbApplication.class, args);
+        SpringApplication.run(SbApplication.class, args);
 
 /*        SpringApplication springApplication = new SpringApplication(SbApplication.class);
         springApplication.addInitializers(new SecondInitializer());
@@ -73,10 +73,10 @@ public class SbApplication {
         System.out.println("world");
         Runtime.getRuntime().removeShutdownHook(close_jvm);*/
 
-        SpringApplication springApplication = new SpringApplication(SbApplication.class);
+/*        SpringApplication springApplication = new SpringApplication(SbApplication.class);
         Properties properties = new Properties();
         properties.setProperty("mooc.website.url", "mooc_url_1");
         springApplication.setDefaultProperties(properties);
-        springApplication.run(args);
+        springApplication.run(args);*/
     }
 }
