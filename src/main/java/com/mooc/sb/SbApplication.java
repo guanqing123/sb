@@ -7,12 +7,15 @@ import com.mooc.sb.execpt.Solid;
 import com.mooc.sb.initializer.SecondInitializer;
 import com.mooc.sb.ioc.ann.MyBeanImport;
 import com.mooc.sb.listener.SecondListener;
+import com.mooc.sb.selector.MyDeferredImportSelector;
+import com.mooc.sb.selector.MyImportSelector;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ResourceBanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.StopWatch;
@@ -21,8 +24,9 @@ import java.util.Properties;
 
 @SpringBootApplication
 @MapperScan("com.mooc.sb.mapper")
-@Import(MyBeanImport.class) //运行需要打开（和 test里面的 import冲突,所以才注释掉）
+@Import({MyBeanImport.class, MyImportSelector.class, MyDeferredImportSelector.class}) //运行需要打开（和 test里面的 import冲突,所以才注释掉）
 @PropertySource({"demo.properties"})
+@ImportResource("ioc/demo.xml")
 public class SbApplication {
 
 /*    @Autowired

@@ -25,6 +25,9 @@ public class Stu2 {
         this.age = age;
     }
 
+    public Stu2() {
+    }
+
     @Override
     public String toString() {
         return "Stu2{" +
