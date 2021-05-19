@@ -25,7 +25,7 @@ import java.util.Properties;
 @SpringBootApplication
 @MapperScan("com.mooc.sb.mapper")
 @Import({MyBeanImport.class, MyImportSelector.class, MyDeferredImportSelector.class}) //运行需要打开（和 test里面的 import冲突,所以才注释掉）
-@PropertySource({"demo.properties"})
+//@PropertySource({"demo.properties"})
 //@ImportResource("ioc/demo.xml")
 public class SbApplication {
 

@@ -1,5 +1,6 @@
 package com.mooc.sb.controller;
 
+import com.example.weather.WeatherService;
 import com.mooc.sb.bean.AppUser;
 import com.mooc.sb.service.AppUserService;
 import com.mooc.sb.service.TestService;
@@ -19,6 +20,9 @@ public class AppUserController {
     private AppUserService appUserService;
 
     @Autowired
+    private WeatherService weatherService;
+
+    @Autowired
     private TestService testService;
 
     @RequestMapping("/detail/{userid}")
@@ -31,5 +35,11 @@ public class AppUserController {
     @ResponseBody
     public String test(){
         return testService.test();
+    }
+
+    @RequestMapping("/weather")
+    @ResponseBody
+    public String weather(){
+        return weatherService.getType() + "\t" + weatherService.getRate();
     }
 }
