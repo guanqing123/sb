@@ -28,5 +28,10 @@ spring:
             location: favorite.jpg
     main:
         banner-mode: console
+    redis:
+        host: 172.30.8.48
+        port: 6379
+        password: jsq8VkoKdW4%^Qh0
+        database: 8
 #    boot:
 #        enableautoconfiguration: false
