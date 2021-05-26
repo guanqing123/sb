@@ -35,3 +35,8 @@ spring:
         database: 8
 #    boot:
 #        enableautoconfiguration: false
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'

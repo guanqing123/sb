@@ -20,9 +20,11 @@ import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Map;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 /**
  * @description: TODO 类描述
@@ -78,5 +80,13 @@ public class Tests {
         result.forEach((k,v) -> {
             System.out.println(k + " " + v);
         });
+    }
+
+    @Test
+    public void testStringUtils(){
+        String str = "abc;efg;hijk";
+        String[] strings = StringUtils.tokenizeToStringArray(str, ";", true, true);
+        Arrays.asList(strings).stream().forEach(x-> System.out.print(x + "\t"));
+        Arrays.asList(strings).stream().filter(x->x.contains("a")).collect(Collectors.toList()).forEach(x-> System.out.println(x));
     }
 }
