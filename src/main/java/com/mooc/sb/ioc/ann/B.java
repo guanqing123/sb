@@ -7,7 +7,7 @@ package com.mooc.sb.ioc.ann;
  **/
 public class B extends Ani {
     @Override
-    String getName() {
+    public String getName() {
         return "bird";
     }
 }

@@ -1,10 +1,12 @@
-package com.mooc.sb.ioc.ann;
+package com.mooc.sb.ioc.ann.bean;
 
+import com.mooc.sb.ioc.ann.Ani;
+import com.mooc.sb.ioc.ann.D;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @description: TODO 类描述
+ * @description: TODO 配置bean方式二 @Bean
  * @Author guanqing
  * @Date 2021/5/5 18:03
  **/

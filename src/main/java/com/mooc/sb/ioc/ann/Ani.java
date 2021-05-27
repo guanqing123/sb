@@ -6,6 +6,5 @@ package com.mooc.sb.ioc.ann;
  * @Date 2021/5/5 18:00
  **/
 public abstract class Ani {
-
-    abstract String getName();
+    public abstract String getName();
 }

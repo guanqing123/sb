@@ -1,26 +1,12 @@
 package com.mooc.sb;
 
-import com.mooc.sb.execpt.AException;
-import com.mooc.sb.execpt.BException;
-import com.mooc.sb.execpt.CException;
-import com.mooc.sb.execpt.Solid;
-import com.mooc.sb.initializer.SecondInitializer;
-import com.mooc.sb.ioc.ann.MyBeanImport;
-import com.mooc.sb.listener.SecondListener;
+import com.mooc.sb.ioc.ann.bean.MyBeanImport;
 import com.mooc.sb.selector.MyDeferredImportSelector;
 import com.mooc.sb.selector.MyImportSelector;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ResourceBanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.util.StopWatch;
-
-import java.util.Properties;
 
 @SpringBootApplication
 @MapperScan("com.mooc.sb.mapper")

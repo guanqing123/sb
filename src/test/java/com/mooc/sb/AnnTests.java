@@ -1,7 +1,7 @@
 package com.mooc.sb;
 
-import com.mooc.sb.ioc.ann.AnnService;
-import com.mooc.sb.ioc.ann.MyBeanImport;
+import com.mooc.sb.ioc.ann.bean.AnnService;
+import com.mooc.sb.ioc.ann.bean.MyBeanImport;
 import com.mooc.sb.ioc.ann.Teacher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
