@@ -4,7 +4,7 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
 /**
- * @description: TODO 类描述
+ * @description: TODO 定义一个bean,进行bean实例的源码追踪
  * @Author guanqing
  * @Date 2021/5/5 21:26
  **/

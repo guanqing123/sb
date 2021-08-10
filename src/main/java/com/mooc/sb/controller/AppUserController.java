@@ -1,6 +1,7 @@
 package com.mooc.sb.controller;
 
 import com.example.weather.WeatherService;
+import com.mooc.sb.access.AccessLimit;
 import com.mooc.sb.bean.AppUser;
 import com.mooc.sb.service.AppUserService;
 import com.mooc.sb.service.TestService;
@@ -31,6 +32,7 @@ public class AppUserController {
         return Optional.ofNullable(appUserService.getAppUserById(userid)).map(AppUser::toString).orElse("empty String");
     }
 
+    @AccessLimit(seconds = 5, maxCount = 5, needLogin = true)
     @RequestMapping("/test")
     @ResponseBody
     public String test(){

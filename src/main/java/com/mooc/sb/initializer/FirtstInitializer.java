@@ -1,5 +1,6 @@
 package com.mooc.sb.initializer;
 
+import com.mooc.sb.ioc.ann.Teacher;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.annotation.Order;

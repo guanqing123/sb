@@ -40,4 +40,16 @@ public class RedisUtil {
     public Object get(String key){
         return key == null ? null : redisTemplate.opsForValue().get(key);
     }
+
+    public long incr(String key, long delta){
+        if (delta<0)
+            throw new RuntimeException("递增因子必像大于0");
+        return redisTemplate.opsForValue().increment(key, delta);
+    }
+
+    public long decr(String key, long delta){
+        if (delta<0)
+            throw new RuntimeException("递减因子必须大于0");
+        return redisTemplate.opsForValue().increment(key, -delta);
+    }
 }

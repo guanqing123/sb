@@ -8,7 +8,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * @description: TODO 类描述
+ * @description: TODO 在bean实例之前,给bean添加属性
  * @Author guanqing
  * @Date 2021/5/5 20:40
  **/
